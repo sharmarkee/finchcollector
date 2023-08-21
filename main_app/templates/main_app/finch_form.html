@@ -6,13 +6,15 @@
 {% else %}
   <h1>Add Finch</h1>
   {% endif %}
-  <form action="" method="POST">
-
+  <form action="" method = "POST">
     {% csrf_token %}
     <table>
-    
-      {{ form.as_table }}
+        {{form.as_table}}
     </table>
-    <input type="submit" value="Submit!" class="btn">
-  </form>
+    {% if object %}
+    <input type="submit" value="Edit Finch!" class="btn">
+    {% else %}
+    <input type="submit" value="Add Finch!" class="btn">
+    {% endif %}
+</form>
 {% endblock %}
